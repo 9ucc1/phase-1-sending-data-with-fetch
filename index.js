@@ -14,9 +14,8 @@ fetch('http://localhost:3000/users', {
 )
 .then(res => res.json())
 .then(body => addNewData(body.id))
-.catch(function(){
-    document.body.innerHTML = ('Unauthorized Access')
-}
+.catch(error =>
+    document.body.innerHTML = error.message
 )
 }
 function addNewData(newID){
